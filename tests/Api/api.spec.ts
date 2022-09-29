@@ -17,6 +17,8 @@ test.describe('API testing', () => {
         boardId = resp.data.id
         const boardName = resp.data.name
         expect(boardName).toBe('my board name')
+        console.log('test');
+        
     })
 
     test('Delete board', async () => {
