@@ -4,3 +4,5 @@ example.spec.ts
 playwright-report
 reports
 test-results
+README.md
+jenkins.war

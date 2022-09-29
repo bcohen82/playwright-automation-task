@@ -11,8 +11,6 @@ export class ApiPage {
         let flag = false
         const temp = data.find(element => {
             if(element.id === boardId){
-                console.log('true');
-                console.log(element.id);
                 flag = true                
             } 
         })
