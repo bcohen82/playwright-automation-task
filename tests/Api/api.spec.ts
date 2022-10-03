@@ -13,7 +13,7 @@ test.describe('API testing', () => {
     let boardId: string
     test('Create new board', async () => {
         const resp = await axios.post(`${baseUrl}/1/boards/?name=my%20board%20name&key=${key}&token=${token}`)
-        expect(resp.status).toBe(201)
+        expect(resp.status).toBe(200)
         boardId = resp.data.id
         const boardName = resp.data.name
         expect(boardName).toBe('my board name')          
