@@ -11,7 +11,7 @@ test.describe.parallel('Positive scenario', () => {
         await loginPage.gotoTrelloLoginPage()
     })
     test('Verify login to Trello @positiveTest', async ({ page }) => {
-        await loginPage.login('automaton.user@gmail.com', 'automation12345')
+        await loginPage.login('automaton.user@gmail.com', 'automation1234')
         await loginPage.verifyLoginSuccess()
     })
 
