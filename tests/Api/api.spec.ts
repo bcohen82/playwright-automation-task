@@ -1,15 +1,16 @@
 import { test, expect } from '@playwright/test'
 import axios from 'axios'
 import { ApiPage } from '../../Pages/API/ApiPage'
+import * as data from "../../config/data.json"
 
 test.describe('API testing', () => {
     let apiPage: ApiPage
     test.beforeEach(async ({ page }) => {
         apiPage = new ApiPage(page)
     })
-    const baseUrl = 'https://api.trello.com'
-    const key = '495babee2085550f63701ec6f1304dfd'
-    const token = '75295d913714a0d2473c82acd51dffaea1d395cad470301cb20fea183e2bff94'
+    const baseUrl = data.API.baseUrl
+    const key = data.API.key
+    const token = data.API.token
     let boardId: string
     test('Create new board', async () => {
         const resp = await axios.post(`${baseUrl}/1/boards/?name=my%20board%20name&key=${key}&token=${token}`)

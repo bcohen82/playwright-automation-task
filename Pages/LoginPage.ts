@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-
+import * as data from "../config/data.json"
 export class LoginPage {
     // Define selectors
     readonly page: Page
@@ -20,7 +20,7 @@ export class LoginPage {
     }
     // Define login page methods
     async gotoTrelloLoginPage() {
-        await this.page.goto('https://trello.com/login')
+        await this.page.goto(data.UI.trelloLoginUrl)
     }
 
     async login(username: string, password: string) {

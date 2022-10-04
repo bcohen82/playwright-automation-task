@@ -1,6 +1,8 @@
 import { test } from '@playwright/test'
 import { UserProfile } from '../../Pages/components/UserProfile'
 import { LoginPage } from '../../Pages/LoginPage'
+import * as data from "../../config/data.json"
+
 
 test.describe.parallel('Positive scenario', () => {
     let loginPage: LoginPage
@@ -11,18 +13,18 @@ test.describe.parallel('Positive scenario', () => {
         await loginPage.gotoTrelloLoginPage()
     })
     test('Verify login to Trello @positiveTest', async ({ page }) => {
-        await loginPage.login('automaton.user@gmail.com', 'automation1234')
+        await loginPage.login(data.UI.trelloUserEmail, data.UI.trelloPassword)
         await loginPage.verifyLoginSuccess()
     })
 
     test('Logout from Trello @positiveTest', async ({ page }) => {
-        await loginPage.login('automaton.user@gmail.com', 'automation1234')
+        await loginPage.login(data.UI.trelloUserEmail, data.UI.trelloPassword)
         await userProfile.logout()
         await userProfile.verifyLogoutSuccess()
     })
 
     test('verify login failed with incorrect email @negativeTest', async ({ page }) => {
-        await loginPage.login('invalid@gmail.com', 'automation1234')
+        await loginPage.login(data.UI.invalidEmail, data.UI.trelloPassword)
         await loginPage.assertErrorMessage()
     })
 })

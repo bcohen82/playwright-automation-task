@@ -1,0 +1,13 @@
+{
+    "UI":{
+        "trelloUserEmail": "automaton.user@gmail.com",
+        "trelloPassword": "automation1234",
+        "invalidEmail": "invalid@gmail.com",
+        "trelloLoginUrl": "https://trello.com/login"
+    },
+    "API":{
+        "baseUrl": "https://api.trello.com",
+        "key": "495babee2085550f63701ec6f1304dfd",
+        "token": "75295d913714a0d2473c82acd51dffaea1d395cad470301cb20fea183e2bff94"
+    }
+}
